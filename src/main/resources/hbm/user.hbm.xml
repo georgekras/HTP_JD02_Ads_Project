@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="by.htp.ad_project.domain.User" table="users">
+
+		<id name="ID" type="int">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+
+		<property name="Login" type="java.lang.String">
+			<column name="Login" />
+		</property>
+
+		<property name="Password" type="java.lang.String">
+			<column name="Password" />
+		</property>
+
+		<property name="Email" type="java.lang.String">
+			<column name="Email" />
+		</property>
+
+		<property name="Nickname" type="java.lang.String">
+			<column name="NickName" />
+		</property>
+
+		<property name="PhoneNumber" type="java.lang.String">
+			<column name="PhoneNumber" />
+		</property>
+		
+		<property name="roles_ID" type="int">
+			<column name="roles_ID" />
+		</property>
+
+	</class>
+</hibernate-mapping>
