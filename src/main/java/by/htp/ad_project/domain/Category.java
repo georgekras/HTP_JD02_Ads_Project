@@ -1,10 +1,21 @@
 package by.htp.ad_project.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@javax.persistence.Entity
+@Table(name = "category")
 public class Category extends Entity {
 
 	private static final long serialVersionUID = -6226794434941096791L;
 
+	@Id @GeneratedValue
+	@Column(name = "ID")
     private int ID;
+	
+	@Column(name = "Name")	
     private String Name;
 
     public Category(int ID, String name) {

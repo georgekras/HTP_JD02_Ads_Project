@@ -1,10 +1,21 @@
 package by.htp.ad_project.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@javax.persistence.Entity
+@Table(name = "roles")
 public class Role extends Entity {
 
 	private static final long serialVersionUID = 1L;
 	
+	@Id @GeneratedValue
+	@Column(name = "ID")
 	private int ID;
+	
+	@Column(name = "Role")
     private String Role;
 
     public Role(int ID, String Role) {

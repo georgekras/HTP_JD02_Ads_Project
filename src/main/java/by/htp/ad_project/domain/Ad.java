@@ -1,13 +1,37 @@
 package by.htp.ad_project.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@javax.persistence.Entity
+@Table(name = "ads")
 public class Ad extends Entity {
 
 	private static final long serialVersionUID = 1984566728743718380L;
 
+	@Id @GeneratedValue
+	@Column(name = "ID")
     private int ID;
-    private String Title, SmallDesc, Description;
+	
+	@Column(name = "Title")	
+    private String Title;
+	
+	@Column(name = "SmallDesc")	
+    private String SmallDesc;
+	
+	@Column(name = "Description")	
+    private String Description;
+	
+	@Column(name = "Price")	
     private int Price;
-    private int users_ID, category_ID;
+	
+	@Column(name = "users_ID")	
+    private int users_ID;
+	
+	@Column(name = "category_ID")	
+	private int category_ID;
 
     public Ad(int ID, String title, String smallDesc, String description, int price, int users_ID, int category_ID) {
         this.ID = ID;

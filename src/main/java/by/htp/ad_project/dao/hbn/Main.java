@@ -17,20 +17,10 @@ public class Main {
 
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("spring/webapp-config.xml");
 		AdDao adDao = (AdDao) applicationContext.getBean("adDao");
+		UserDao userDao = (UserDao) applicationContext.getBean("userDao");
 		
-		System.out.println(adDao.read(3));
-		Ad ad = new Ad(0, "lolol", "lolol", "lolol", 555, 2, 2);
-		adDao.create(ad);
-		System.out.println("Ad added" + ad);
-		ad.setTitle("123lasodasd");
-		adDao.update(ad);
-		System.out.println("Ad updated" + ad);		
-		adDao.delete(ad);
-		System.out.println("Ad deleted" + ad);
-		 List<Ad> ads = adDao.readAll();
-		 for (Ad ad1 : ads) {
-		 System.out.println(ad1);
-		 }
+		System.out.println(userDao.loginRead("admin", "admin"));
+
 	}
 
 }

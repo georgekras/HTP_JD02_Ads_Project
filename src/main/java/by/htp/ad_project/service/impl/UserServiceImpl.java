@@ -40,5 +40,10 @@ public class UserServiceImpl implements UserService {
 		return userDao.readAll();
 	}
 
+	@Override
+	public User loginRead(String login, String password) {
+		return userDao.loginRead(login, password);
+	}
+
 
 }

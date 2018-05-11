@@ -4,5 +4,6 @@ import by.htp.ad_project.domain.User;
 
 public interface UserDao extends BaseDao<User> {
 
+	User loginRead(String login, String password);
 	
 }

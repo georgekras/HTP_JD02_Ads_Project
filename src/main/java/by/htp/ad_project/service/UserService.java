@@ -10,6 +10,8 @@ public interface UserService {
 	
 	User read(int id);
 	
+	User loginRead(String login, String password);
+	
 	void update(User user);
 	
 	void delete(User user);

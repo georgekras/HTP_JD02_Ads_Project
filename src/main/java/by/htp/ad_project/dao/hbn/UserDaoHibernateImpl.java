@@ -2,7 +2,10 @@ package by.htp.ad_project.dao.hbn;
 
 import java.util.List;
 
+import org.hibernate.Criteria;
 import org.hibernate.Session;
+import org.hibernate.criterion.Restrictions;
+
 import by.htp.ad_project.dao.UserDao;
 import by.htp.ad_project.domain.User;
 
@@ -55,6 +58,23 @@ public class UserDaoHibernateImpl implements UserDao {
 		session.delete(entity);
 		session.getTransaction().commit();
 
+	}
+
+	@Override
+	public User loginRead(String login, String password) {
+
+		Session session = SessionFactoryManager.getSessionFactory().openSession();
+		session.beginTransaction();
+		Criteria criteria = session.createCriteria(User.class);
+		criteria.add(Restrictions.eq("Login", login)).add(Restrictions.eq("Password", password));
+		List<User> users = criteria.list();
+
+		session.close();
+		if (!users.isEmpty()) {
+		    return users.get(0);
+		} else {
+		    return null;
+		}
 	}
 
 }

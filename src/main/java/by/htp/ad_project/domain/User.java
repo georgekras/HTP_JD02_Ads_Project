@@ -1,11 +1,36 @@
 package by.htp.ad_project.domain;
 
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@javax.persistence.Entity
+@Table(name = "users")
 public class User extends Entity {
 
 	private static final long serialVersionUID = -1919018243680435461L;
 
+	@Id @GeneratedValue
+	@Column(name = "ID")
     private int ID;
-    private String Login, Email, Password, Nickname, PhoneNumber;
+	
+	@Column(name = "Login")
+    private String Login;
+	
+	@Column(name = "Email")
+    private String Email;
+	
+	@Column(name = "Password")
+    private String Password;
+	
+	@Column(name = "Nickname")
+    private String Nickname;
+	
+	@Column(name = "PhoneNumber")
+    private String PhoneNumber;
+	
+	@Column(name = "roles_ID")
     private int roles_ID;
 
     public User(int ID, String Login, String Email, String Password, String Nickname, String PhoneNumber, int roles_ID) {

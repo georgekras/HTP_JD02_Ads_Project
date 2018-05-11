@@ -13,4 +13,9 @@
 		<property name="categoryDao" ref="categoryDao" />
 	</bean>
 
+	<bean id="adService"
+		class="by.htp.ad_project.service.impl.AdServiceImpl">
+		<property name="adDao" ref="adDao" />
+	</bean>
+
 </beans>
