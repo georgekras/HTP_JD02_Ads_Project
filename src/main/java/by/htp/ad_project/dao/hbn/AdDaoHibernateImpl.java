@@ -3,10 +3,14 @@ package by.htp.ad_project.dao.hbn;
 import java.util.List;
 
 import org.hibernate.Session;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 import by.htp.ad_project.dao.AdDao;
 import by.htp.ad_project.domain.Ad;
 
+@Component
+@Repository
 @SuppressWarnings("unchecked")
 public class AdDaoHibernateImpl implements AdDao {
 
@@ -46,7 +50,7 @@ public class AdDaoHibernateImpl implements AdDao {
 
 		Session session = SessionFactoryManager.getSessionFactory().openSession();
 		session.beginTransaction();
-		session.update(entity);
+		session.merge(entity);
 		session.getTransaction().commit();
 		session.close();
 

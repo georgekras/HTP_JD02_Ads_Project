@@ -18,25 +18,20 @@ import by.htp.ad_project.domain.Ad;
 import by.htp.ad_project.service.AdService;
 
 @Controller
-@RequestMapping("/main")
+@RequestMapping(value = "/")
 public class SpringMVCMainAction {
-	
-    @Autowired
-    private ServletContext context;
 
-    public void setServletContext(ServletContext servletContext) {
-	this.context = servletContext;
-    }
+	@Autowired
+	private AdService adService;
 
-    @RequestMapping(method = RequestMethod.GET)
-    public String getBrands(ModelMap model) {
+	public void setAdService(AdService adService) {
+		this.adService = adService;
+	}
 
-	WebApplicationContext webApplicationContext = WebApplicationContextUtils.getWebApplicationContext(this.context);
-	AdService adService =  (AdService) webApplicationContext.getBean("adService");
-
-	List<Ad> ads = adService.getAllAds();
-	model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
-
-	return "main";
-    }
+	@RequestMapping(value = "/main_action", method = RequestMethod.GET)
+	public String mainAction(ModelMap model) {
+		List<Ad> ads = adService.getAllAds();
+		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
+		return "main";
+	}
 }

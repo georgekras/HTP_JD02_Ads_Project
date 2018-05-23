@@ -15,7 +15,7 @@
         <div class="col-md-4">${user.password} </div>
     </div>
 <br>
-<form class="form-horizontal" action="do?action=profile_action" method="post">
+<form class="form-horizontal" action="" method="post">
     <fieldset>
 
         <!-- Form Name -->
@@ -34,7 +34,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="Password">Password Input</label>
             <div class="col-md-4">
-                <input id="Password" name="user_password" type="password" placeholder="placeholder"
+                <input id="Password" name="user_password" type="password" placeholder=""
                        class="form-control input-md" required=""
                        value="${user.password}">
                 <span class="help-block">(min 5 symbols)</span>

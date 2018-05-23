@@ -1,19 +1,21 @@
 package by.htp.ad_project.web.util;
 
 public final class WebConstantDeclaration {
-	
+
 	public static final String ACTION_NAME_MAIN = "main_action";
 	public static final String ACTION_NAME_LOGIN = "login_action";
 	public static final String ACTION_NAME_LOGOUT = "logout_action";
 	public static final String ACTION_NAME_SIGNUP = "signup_action";
 	public static final String ACTION_NAME_PROFILE = "profile_action";
-	
+
+	public static final String REDIRECT_TO = "redirect:";
+
 	public static final String PAGE_USER_MAIN = "/WEB-INF/page/user/main.jsp";
 	public static final String PAGE_USER_LOGIN = "/WEB-INF/page/user/login.jsp";
 	public static final String PAGE_USER_LOGOUT = "/WEB-INF/page/user/logout.jsp";
 	public static final String PAGE_USER_SIGNUP = "/WEB-INF/page/user/signup.jsp";
 	public static final String PAGE_USER_PROFILE = "/WEB-INF/page/user/profile.jsp";
-	
+
 	public static final String REQUEST_PARAM_ACTION = "action";
 
 	public static final String REQUEST_PARAM_USER = "user";
@@ -25,7 +27,7 @@ public final class WebConstantDeclaration {
 	public static final String REQUEST_PARAM_USER_PHONENUMBER = "user_phone";
 	public static final String REQUEST_PARAM_USER_ROLES_ID = "user_roles_id";
 	public static final String REQUEST_PARAM_USER_LIST = "user_list";
-	
+
 	public static final String REQUEST_PARAM_AD = "ad";
 	public static final String REQUEST_PARAM_AD_ID = "ad_id";
 	public static final String REQUEST_PARAM_AD_TITLE = "ad_title";
@@ -35,7 +37,7 @@ public final class WebConstantDeclaration {
 	public static final String REQUEST_PARAM_AD_USERS_ID = "ad_users_id";
 	public static final String REQUEST_PARAM_AD_CATEGORY_ID = "ad_category_id";
 	public static final String REQUEST_PARAM_ADS_LIST = "ads_list";
-	
+
 	public static final String REQUEST_PARAM_CATEGORY = "category";
 	public static final String REQUEST_PARAM_CATEGORY_ID = "category_id";
 	public static final String REQUEST_PARAM_CATEGORY_NAME = "category_name";
@@ -43,8 +45,8 @@ public final class WebConstantDeclaration {
 
 	public static final String REQUEST_MSG = "msg";
 	public static final String REQUEST_MSG_SUCCESS = "msg_success";
-	
-	private WebConstantDeclaration(){	
+
+	private WebConstantDeclaration() {
 	}
-	
+
 }

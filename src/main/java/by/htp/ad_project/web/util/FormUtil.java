@@ -4,12 +4,9 @@ import javax.servlet.http.HttpServletRequest;
 import java.text.ParseException;
 
 public class FormUtil {
-    static String getString(HttpServletRequest req, String field, String regxp) throws ParseException {
+    public static String getString(HttpServletRequest req, String field) {
         String value = req.getParameter(field);
-        if (value.trim().matches(regxp))
-            return value;
-        else
-            throw new ParseException("Input error",1);
+		return value;
     }
 
     static int getInt(HttpServletRequest req, String field) throws ParseException {

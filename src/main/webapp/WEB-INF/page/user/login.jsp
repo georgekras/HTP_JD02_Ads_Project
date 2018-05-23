@@ -6,7 +6,7 @@
 		<h2>Welcome back!</h2>
 	</div>
 	<br>
-	<form class="form-horizontal" action="do?action=login_action"
+	<form class="form-horizontal" action="login_action"
 		method="post">
 		<fieldset>
 

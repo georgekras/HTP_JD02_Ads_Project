@@ -13,27 +13,19 @@
 		<filter-class>by.htp.ad_project.web.util.CacheControl</filter-class>
 	</filter>
 
-
 	<filter-mapping>
 		<filter-name>CacheControl</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 
 	<servlet>
-		<servlet-name>FrontController</servlet-name>
-		<servlet-class>by.htp.ad_project.web.controller.FrontController</servlet-class>
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-
-	<servlet-mapping>
-		<servlet-name>FrontController</servlet-name>
-		<url-pattern>/do</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
 		<servlet-name>NewServlet</servlet-name>
 		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
-		<load-on-startup>2</load-on-startup>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/NewServlet-servlet.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
 	</servlet>
 
 	<servlet-mapping>
@@ -45,6 +37,7 @@
 		<param-name>contextConfigLocation</param-name>
 		<param-value>classpath:spring/webapp-config.xml</param-value>
 	</context-param>
+
 
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
