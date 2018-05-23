@@ -7,7 +7,7 @@
         <h2>Hello new Bonjo user!</h2>
     </div>
     <br>
-    <form class="form-horizontal" action="do?action=signup_action" method="post">
+    <form class="form-horizontal" action="signup_action" method="post">
         <fieldset>
 
             <!-- Text input-->
