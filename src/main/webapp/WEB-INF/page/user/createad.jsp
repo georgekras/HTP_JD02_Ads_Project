@@ -6,13 +6,13 @@
         <h2>Create AD</h2>
     </div>
     <br>
-<form class="form-horizontal" action="do?command=CreateAd" method="post">
+<form class="form-horizontal" action="create_ad_action" method="post">
     <fieldset>
         <!-- Text input-->
         <div class="form-group">
             <label class="col-md-4 control-label" for="Title">Title</label>
             <div class="col-md-4">
-                <input id="Title" name="Title" type="text" placeholder="" class="form-control input-md" required=""
+                <input id="Title" name="ad_title" type="text" placeholder="" class="form-control input-md" required=""
                 value="test">
             </div>
         </div>
@@ -21,8 +21,8 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="category_ID">Category</label>
             <div class="col-md-4">
-                        <select id="name" name="category_ID" class="form-control">
-                            <c:forEach items="${categories}" var="category">
+                        <select id="name" name="ad_category_id" class="form-control">
+                            <c:forEach items="${categories_list}" var="category">
                                 <option value="${category.ID}" role=${category.ID} ${category.ID==ad.category_ID?"selected":""}>
                                         ${category.name}
                                 </option>
@@ -35,7 +35,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="SmallDesc">Small Description</label>
             <div class="col-md-4">
-                <input id="SmallDesc" name="SmallDesc" type="text" placeholder="" class="form-control input-md"
+                <input id="SmallDesc" name="ad_smalldesc" type="text" placeholder="" class="form-control input-md"
                        required="" value="test">
             </div>
         </div>
@@ -44,7 +44,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="Description">Description</label>
             <div class="col-md-4">
-                <input id="Description" name="Description" type="text"placeholder="" class="form-control input-md"
+                <input id="Description" name="ad_description" type="text"placeholder="" class="form-control input-md"
                        required="" value="test">
             </div>
         </div>
@@ -54,7 +54,7 @@
         <div class="form-group">
             <label class="col-md-4 control-label" for="Price">Price</label>
             <div class="col-md-2">
-                <input id="Price" name="Price" type="text" placeholder="" class="form-control input-md"
+                <input id="Price" name="ad_price" type="text" placeholder="" class="form-control input-md"
                 value="333">
             </div>
         </div>

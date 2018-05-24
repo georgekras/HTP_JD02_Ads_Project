@@ -9,7 +9,7 @@ public class FormUtil {
 		return value;
     }
 
-    static int getInt(HttpServletRequest req, String field) throws ParseException {
+    public static int getInt(HttpServletRequest req, String field) throws ParseException {
         String value=req.getParameter(field);
         return Integer.parseInt(value);
     }

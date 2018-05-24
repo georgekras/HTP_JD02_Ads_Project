@@ -15,7 +15,9 @@ import org.springframework.web.context.WebApplicationContext;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import by.htp.ad_project.domain.Ad;
+import by.htp.ad_project.domain.Category;
 import by.htp.ad_project.service.AdService;
+import by.htp.ad_project.service.CategoryService;
 
 @Controller
 @RequestMapping(value = "/")
@@ -23,14 +25,23 @@ public class SpringMVCMainAction {
 
 	@Autowired
 	private AdService adService;
+	
+	@Autowired
+	private CategoryService categoryService;
 
 	public void setAdService(AdService adService) {
 		this.adService = adService;
+	}
+	
+	public void setCategoryService(CategoryService categoryService) {
+		this.categoryService = categoryService;
 	}
 
 	@RequestMapping(value = "/main_action", method = RequestMethod.GET)
 	public String mainAction(ModelMap model) {
 		List<Ad> ads = adService.getAllAds();
+		List<Category> categories = categoryService.getAllCategories();
+		model.addAttribute(REQUEST_PARAM_CATEGORIES_LIST, categories);
 		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
 		return "main";
 	}

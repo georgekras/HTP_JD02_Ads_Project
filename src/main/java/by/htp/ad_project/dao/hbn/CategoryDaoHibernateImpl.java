@@ -37,9 +37,9 @@ public class CategoryDaoHibernateImpl implements CategoryDao {
 	public List<Category> readAll() {
 
 		Session session = SessionFactoryManager.getSessionFactory().openSession();
-		List<Category> brands = session.createCriteria(Category.class).list();
+		List<Category> categories = session.createCriteria(Category.class).list();
 
-		return brands;
+		return categories;
 	}
 
 	@Override
