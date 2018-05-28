@@ -21,14 +21,13 @@ import by.htp.ad_project.domain.Category;
 import by.htp.ad_project.domain.User;
 import by.htp.ad_project.service.AdService;
 import by.htp.ad_project.service.CategoryService;
-import by.htp.ad_project.service.UserService;
 import by.htp.ad_project.web.util.FormUtil;
 import by.htp.ad_project.web.util.HttpRequestParamValidator;
 import by.htp.ad_project.web.util.ValidateNullParamException;
 
 @Controller
 @RequestMapping(value = "/create_ad_action")
-public class SpringMVCCreateAdAction {
+public class CreateAdAction {
 
 	@Autowired
 	private	AdService adService;
@@ -48,7 +47,7 @@ public class SpringMVCCreateAdAction {
 	public String createAd(HttpServletRequest request) {
 		List<Category> categories = categoryService.getAllCategories();
 		request.setAttribute(REQUEST_PARAM_CATEGORIES_LIST, categories);
-		return "createad";
+		return PAGE_ADS_CREATE_AD;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

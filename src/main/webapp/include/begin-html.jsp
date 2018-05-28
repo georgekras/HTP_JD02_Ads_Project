@@ -32,8 +32,6 @@
 							href="create_category_action">Create Category</a></li>
 						<li class="nav-item active"><a class="nav-link"
 							href="edit_category_action">Edit Category</a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="=reset_db_action">Reset DB</a></li>
 					</c:if>
 					<c:if test="${user!=null && user.roles_ID==2}">
 						<li class="nav-item active"><a class="nav-link"

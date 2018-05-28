@@ -2,19 +2,20 @@ package by.htp.ad_project.web.util;
 
 public final class WebConstantDeclaration {
 
-	public static final String ACTION_NAME_MAIN = "main_action";
-	public static final String ACTION_NAME_LOGIN = "login_action";
-	public static final String ACTION_NAME_LOGOUT = "logout_action";
-	public static final String ACTION_NAME_SIGNUP = "signup_action";
-	public static final String ACTION_NAME_PROFILE = "profile_action";
-
 	public static final String REDIRECT_TO = "redirect:";
 
-	public static final String PAGE_USER_MAIN = "/WEB-INF/page/user/main.jsp";
-	public static final String PAGE_USER_LOGIN = "/WEB-INF/page/user/login.jsp";
-	public static final String PAGE_USER_LOGOUT = "/WEB-INF/page/user/logout.jsp";
-	public static final String PAGE_USER_SIGNUP = "/WEB-INF/page/user/signup.jsp";
-	public static final String PAGE_USER_PROFILE = "/WEB-INF/page/user/profile.jsp";
+	public static final String PAGE_ADMIN_CREATE_CATEGORY = "admin/createcategory";
+	public static final String PAGE_ADMIN_EDIT_CATEGORY = "admin/editcategory";
+	public static final String PAGE_ADMIN_EDIT_USERS = "admin/editusers";
+	
+	public static final String PAGE_ADS_CREATE_AD = "ads/createad";
+	public static final String PAGE_ADS_USER_ADS = "ads/myads";
+	
+	public static final String PAGE_USER_MAIN = "user/main";
+	public static final String PAGE_USER_LOGIN = "user/login";
+	public static final String PAGE_USER_LOGOUT = "user/logout";
+	public static final String PAGE_USER_SIGNUP = "user/signup";
+	public static final String PAGE_USER_PROFILE = "user/profile";
 
 	public static final String REQUEST_PARAM_ACTION = "action";
 

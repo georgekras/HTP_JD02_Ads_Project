@@ -46,6 +46,11 @@ public class AdServiceImpl implements AdService {
 		return adDao.readAll();
 	}
 
+	@Override
+	public List<Ad> getUserAds(int user_ID) {
+		return adDao.readUserAds(user_ID);
+	}
+
 
 
 }

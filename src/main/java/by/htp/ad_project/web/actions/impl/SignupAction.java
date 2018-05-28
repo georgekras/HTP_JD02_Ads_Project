@@ -20,7 +20,7 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 
 @Controller
 @RequestMapping(value = "/signup_action")
-public class SpringMVCSignupAction {
+public class SignupAction {
 
 	@Autowired
 	private UserService userService;
@@ -31,7 +31,7 @@ public class SpringMVCSignupAction {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String signUp() {
-		return "signup";
+		return PAGE_USER_SIGNUP;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)

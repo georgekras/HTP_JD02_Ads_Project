@@ -15,5 +15,7 @@ public interface AdService {
 	void delete(Ad ad);
 	
 	List<Ad> getAllAds();
+	
+	List<Ad> getUserAds(int user_ID);
 
 }

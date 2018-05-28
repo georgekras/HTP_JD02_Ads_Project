@@ -4,15 +4,13 @@ import java.util.List;
 
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
-import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.context.WebApplicationContext;
-import org.springframework.web.context.support.WebApplicationContextUtils;
 
 import by.htp.ad_project.domain.Ad;
 import by.htp.ad_project.domain.Category;
@@ -21,7 +19,7 @@ import by.htp.ad_project.service.CategoryService;
 
 @Controller
 @RequestMapping(value = "/")
-public class SpringMVCMainAction {
+public class MainAction {
 
 	@Autowired
 	private AdService adService;
@@ -38,11 +36,20 @@ public class SpringMVCMainAction {
 	}
 
 	@RequestMapping(value = "/main_action", method = RequestMethod.GET)
-	public String mainAction(ModelMap model) {
+	public String mainAction(HttpServletRequest request, ModelMap model) {
 		List<Ad> ads = adService.getAllAds();
 		List<Category> categories = categoryService.getAllCategories();
 		model.addAttribute(REQUEST_PARAM_CATEGORIES_LIST, categories);
 		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
-		return "main";
+		return PAGE_USER_MAIN;
 	}
+	
+//	@RequestMapping(method = RequestMethod.POST)
+//	public String viewAd(ModelMap model) {
+//		List<Ad> ads = adService.getAllAds();
+//		List<Category> categories = categoryService.getAllCategories();
+//		model.addAttribute(REQUEST_PARAM_CATEGORIES_LIST, categories);
+//		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
+//		return REDIRECT_TO + "/view_ad" + 1 + "_action";
+//	}
 }

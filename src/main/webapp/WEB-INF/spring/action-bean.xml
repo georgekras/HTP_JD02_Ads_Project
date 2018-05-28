@@ -11,6 +11,18 @@
 		<property name="categoryService" ref="categoryService"></property>
 	</bean>
 
+	<bean name="my_ads_action"
+		class="by.htp.ad_project.web.actions.impl.UserAdsAction">
+		<property name="adService" ref="adService"></property>
+		<property name="categoryService" ref="categoryService"></property>
+	</bean>
+
+	<bean name="view_ad_action"
+		class="by.htp.ad_project.web.actions.impl.ViewAdAction">
+		<property name="adService" ref="adService"></property>
+		<property name="categoryService" ref="categoryService"></property>
+	</bean>
+
 	<bean name="login_action"
 		class="by.htp.ad_project.web.actions.impl.LoginAction">
 		<property name="userService" ref="userService"></property>

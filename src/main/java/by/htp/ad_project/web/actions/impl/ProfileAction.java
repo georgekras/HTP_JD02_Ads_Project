@@ -15,7 +15,7 @@ import by.htp.ad_project.web.util.FormUtil;
 
 @Controller
 @RequestMapping(value = "/profile_action")
-public class SpringMVCProfileAction {
+public class ProfileAction {
 
 	private UserService userService;
 
@@ -25,7 +25,7 @@ public class SpringMVCProfileAction {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewProfile() {
-		return "profile";
+		return PAGE_USER_PROFILE;
 	}
 	
 	@RequestMapping(method = RequestMethod.POST)
@@ -37,11 +37,6 @@ public class SpringMVCProfileAction {
             user = (User) o;
         } else
         	return REDIRECT_TO + "/main_action";
-//		HttpSession session = request.getSession();
-//		User user = (User) session.getAttribute("user");
-//		if (user == null) {
-//			return REDIRECT_TO + "/main_action";
-//		}
 		if (FormUtil.isPost(request)) {
             String password = FormUtil.getString(request, REQUEST_PARAM_USER_PASSWORD);
             String phoneNumber = FormUtil.getString(request, REQUEST_PARAM_USER_PHONENUMBER);

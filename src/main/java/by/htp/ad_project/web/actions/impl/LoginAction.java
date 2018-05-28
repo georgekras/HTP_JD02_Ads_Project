@@ -20,7 +20,7 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 
 @Controller
 @RequestMapping(value = "/login_action")
-public class SpringMVCLoginAction {
+public class LoginAction {
 
 	@Autowired
 	private UserService userService;
@@ -31,7 +31,7 @@ public class SpringMVCLoginAction {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String login(@RequestParam Map<String, String> params, Model model) {
-		return "login";
+		return PAGE_USER_LOGIN;
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
@@ -47,7 +47,7 @@ public class SpringMVCLoginAction {
 		} catch (ValidateNullParamException e) {
 			//TODO msg to const
 			model.addAttribute(REQUEST_MSG, "No user.");
-			return "login";
+			return PAGE_USER_LOGIN;
 		}
 
 	}
