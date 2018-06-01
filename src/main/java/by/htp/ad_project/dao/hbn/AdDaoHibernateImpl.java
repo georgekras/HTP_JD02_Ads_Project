@@ -31,7 +31,7 @@ public class AdDaoHibernateImpl implements AdDao {
 
 		Session session = SessionFactoryManager.getSessionFactory().openSession();
 		session.beginTransaction();
-		Ad ad = (Ad) session.load(Ad.class, id);
+		Ad ad = (Ad) session.get(Ad.class, id);
 		session.close();
 		return ad;
 	}

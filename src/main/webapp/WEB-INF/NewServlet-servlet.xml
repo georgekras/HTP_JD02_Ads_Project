@@ -13,7 +13,7 @@
 
 	<mvc:annotation-driven />
 
-	<mvc:resources mapping="/assets/**" location="/assets/" />
+	<mvc:resources mapping="assets/**" location="/assets/" />
 
 	<context:component-scan
 		base-package="by.htp.ad_project.web.actions.impl" />

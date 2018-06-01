@@ -22,6 +22,8 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 @RequestMapping(value = "/login_action")
 public class LoginAction {
 
+    private static final String MSG_NO_USER = "Can't login. Check your inputs.";
+	
 	@Autowired
 	private UserService userService;
 
@@ -30,7 +32,7 @@ public class LoginAction {
 	}
 
 	@RequestMapping(method = RequestMethod.GET)
-	public String login(@RequestParam Map<String, String> params, Model model) {
+	public String login() {
 		return PAGE_USER_LOGIN;
 	}
 
@@ -45,8 +47,7 @@ public class LoginAction {
 			session.setAttribute(REQUEST_PARAM_USER, user);
 			return REDIRECT_TO + "/profile_action";
 		} catch (ValidateNullParamException e) {
-			//TODO msg to const
-			model.addAttribute(REQUEST_MSG, "No user.");
+			model.addAttribute(REQUEST_MSG, MSG_NO_USER);
 			return PAGE_USER_LOGIN;
 		}
 

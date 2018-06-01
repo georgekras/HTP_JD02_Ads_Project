@@ -10,6 +10,8 @@ public final class WebConstantDeclaration {
 	
 	public static final String PAGE_ADS_CREATE_AD = "ads/createad";
 	public static final String PAGE_ADS_USER_ADS = "ads/myads";
+	public static final String PAGE_ADS_VIEW_AD = "ads/viewad";
+	public static final String PAGE_ADS_EDIT_AD = "ads/editad";
 	
 	public static final String PAGE_USER_MAIN = "user/main";
 	public static final String PAGE_USER_LOGIN = "user/login";
@@ -30,6 +32,7 @@ public final class WebConstantDeclaration {
 	public static final String REQUEST_PARAM_USER_LIST = "user_list";
 
 	public static final String REQUEST_PARAM_AD = "ad";
+	public static final String REQUEST_PARAM_USER_AD = "user_ad";
 	public static final String REQUEST_PARAM_AD_ID = "ad_id";
 	public static final String REQUEST_PARAM_AD_TITLE = "ad_title";
 	public static final String REQUEST_PARAM_AD_SMALLDESC = "ad_smalldesc";

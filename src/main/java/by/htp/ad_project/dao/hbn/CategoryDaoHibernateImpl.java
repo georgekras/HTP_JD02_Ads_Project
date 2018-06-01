@@ -29,8 +29,10 @@ public class CategoryDaoHibernateImpl implements CategoryDao {
 
 		Session session = SessionFactoryManager.getSessionFactory().openSession();
 		session.beginTransaction();
-
-		return (Category) session.load(Category.class, id);
+		Category category = (Category) session.get(Category.class, id);
+		session.close();
+		
+		return category;
 	}
 
 	@Override

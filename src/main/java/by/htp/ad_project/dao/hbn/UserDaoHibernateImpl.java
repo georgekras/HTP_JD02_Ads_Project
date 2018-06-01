@@ -31,8 +31,10 @@ public class UserDaoHibernateImpl implements UserDao {
 
 		Session session = SessionFactoryManager.getSessionFactory().openSession();
 		session.beginTransaction();
+		User user = (User) session.get(User.class, id);
 		session.close();
-		return (User) session.load(User.class, id);
+		
+		return user;
 	}
 
 	@Override

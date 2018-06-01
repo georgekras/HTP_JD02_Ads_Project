@@ -6,6 +6,7 @@ import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
 import javax.servlet.http.HttpSession;
 
+import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,6 +22,9 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 @Controller
 @RequestMapping(value = "/signup_action")
 public class SignupAction {
+
+	private static final String MSG_NO_SINGUP_USER = "Can't sign up. Check your inputs.";
+	private static final String MSG_USER_DUPLICATE = "User with this login or email already exists.";
 
 	@Autowired
 	private UserService userService;
@@ -49,8 +53,10 @@ public class SignupAction {
 			session.setAttribute(REQUEST_PARAM_USER, user);
 			return REDIRECT_TO + "/profile_action";
 		} catch (ValidateNullParamException e) {
-
-			model.addAttribute(REQUEST_MSG, "Error");
+			model.addAttribute(REQUEST_MSG, MSG_NO_SINGUP_USER);
+			return PAGE_USER_SIGNUP;
+		} catch (ConstraintViolationException e) {
+			model.addAttribute(REQUEST_MSG, MSG_USER_DUPLICATE);
 			return PAGE_USER_SIGNUP;
 		}
 	}

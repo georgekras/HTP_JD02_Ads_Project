@@ -59,4 +59,3 @@
 				</ul>
 			</div>
 		</nav>
-		<div align="center">

@@ -23,14 +23,14 @@ public class MainAction {
 
 	@Autowired
 	private AdService adService;
-	
+
 	@Autowired
 	private CategoryService categoryService;
 
 	public void setAdService(AdService adService) {
 		this.adService = adService;
 	}
-	
+
 	public void setCategoryService(CategoryService categoryService) {
 		this.categoryService = categoryService;
 	}
@@ -43,13 +43,4 @@ public class MainAction {
 		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
 		return PAGE_USER_MAIN;
 	}
-	
-//	@RequestMapping(method = RequestMethod.POST)
-//	public String viewAd(ModelMap model) {
-//		List<Ad> ads = adService.getAllAds();
-//		List<Category> categories = categoryService.getAllCategories();
-//		model.addAttribute(REQUEST_PARAM_CATEGORIES_LIST, categories);
-//		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
-//		return REDIRECT_TO + "/view_ad" + 1 + "_action";
-//	}
 }
