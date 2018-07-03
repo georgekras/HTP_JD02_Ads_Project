@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import java.util.Map;
 
@@ -20,7 +20,7 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 
 @Controller
 @RequestMapping(value = "/login_action")
-public class LoginAction {
+public class LoginController {
 
     private static final String MSG_NO_USER = "Can't login. Check your inputs.";
 	

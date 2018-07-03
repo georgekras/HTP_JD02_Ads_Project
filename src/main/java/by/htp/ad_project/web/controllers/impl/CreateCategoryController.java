@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import java.text.ParseException;
 import java.util.Map;
@@ -21,7 +21,7 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 
 @Controller
 @RequestMapping(value = "/create_category_action")
-public class CreateCategoryAction {
+public class CreateCategoryController {
 
 	@Autowired
 	private CategoryService categoryService;

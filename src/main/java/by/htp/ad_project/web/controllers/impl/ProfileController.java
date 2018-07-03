@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
@@ -16,7 +16,7 @@ import by.htp.ad_project.web.util.FormUtil;
 
 @Controller
 @RequestMapping(value = "/profile_action")
-public class ProfileAction {
+public class ProfileController {
 
     private static final String MSG_PROFILE_UPDATED = "Your profile updated.";
 	

@@ -30,8 +30,6 @@
 							href="edit_users_action">Edit users</a></li>
 						<li class="nav-item active"><a class="nav-link"
 							href="create_category_action">Create Category</a></li>
-						<li class="nav-item active"><a class="nav-link"
-							href="edit_category_action">Edit Category</a></li>
 					</c:if>
 					<c:if test="${user!=null && user.roles_ID==2}">
 						<li class="nav-item active"><a class="nav-link"

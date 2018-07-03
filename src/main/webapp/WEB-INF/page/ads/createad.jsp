@@ -1,5 +1,35 @@
 <%@ page language="java" pageEncoding="UTF-8"%>
 <%@ include file="/include/begin-html.jsp"%>
+<script type="text/javascript" 
+	src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js">
+</script>
+
+<script type="text/javascript">
+
+    $(document).ready( function () {
+
+	maxLength = $("textarea#Description").attr("maxlength");
+        $("textarea#Description").after("<div><span id='remainingLengthTempId'>" 
+                  + maxLength + "</span> symbols remaining.</div>");
+		
+        $("textarea#Description").bind("keyup change", function(){checkMaxLength(this.id,  maxLength); } )
+
+    });
+
+    function checkMaxLength(textareaID, maxLength){
+	
+        currentLengthInTextarea = $("#"+textareaID).val().length;
+        $(remainingLengthTempId).text(parseInt(maxLength) - parseInt(currentLengthInTextarea));
+        
+		if (currentLengthInTextarea > (maxLength)) { 
+			
+			$("textarea#Description").val($("textarea#Description").val().slice(0, maxLength));
+			$(remainingLengthTempId).text(0);
+			
+		}
+    }
+</script>
+
 <div align="center">
 	<br>
 	<div class="container">

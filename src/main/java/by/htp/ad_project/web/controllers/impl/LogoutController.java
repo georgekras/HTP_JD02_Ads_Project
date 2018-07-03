@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 @RequestMapping(value = "/logout_action")
-public class LogoutAction {
+public class LogoutController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String logout(HttpSession session) {

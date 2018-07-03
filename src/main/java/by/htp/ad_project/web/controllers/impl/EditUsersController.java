@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
@@ -20,7 +20,7 @@ import by.htp.ad_project.web.util.FormUtil;
 
 @Controller
 @RequestMapping(value = "/edit_users_action")
-public class EditUsersAction {
+public class EditUsersController {
 
 	private static final String MSG_USER_UPDATED = " was updated.";
 	private static final String MSG_USER_DELETED = " was deleted.";

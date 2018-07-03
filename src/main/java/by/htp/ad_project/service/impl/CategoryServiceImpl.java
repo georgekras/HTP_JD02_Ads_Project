@@ -3,14 +3,12 @@ package by.htp.ad_project.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import by.htp.ad_project.dao.CategoryDao;
 import by.htp.ad_project.domain.Category;
 import by.htp.ad_project.service.CategoryService;
 
-@Component
 @Service
 public class CategoryServiceImpl implements CategoryService {
 

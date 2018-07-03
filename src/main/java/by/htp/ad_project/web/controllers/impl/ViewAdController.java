@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
@@ -18,7 +18,7 @@ import by.htp.ad_project.service.UserService;
 
 @Controller
 @RequestMapping(value = "/view_ad_action={id}")
-public class ViewAdAction {
+public class ViewAdController {
 
 	@Autowired
 	private	AdService adService;

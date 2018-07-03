@@ -5,13 +5,11 @@ import java.util.List;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import by.htp.ad_project.dao.UserDao;
 import by.htp.ad_project.domain.User;
 
-@Component
 @Repository
 @SuppressWarnings("unchecked")
 public class UserDaoHibernateImpl implements UserDao {

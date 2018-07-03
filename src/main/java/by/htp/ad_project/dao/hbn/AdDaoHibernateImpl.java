@@ -4,13 +4,11 @@ import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import by.htp.ad_project.dao.AdDao;
 import by.htp.ad_project.domain.Ad;
 
-@Component
 @Repository
 @SuppressWarnings("unchecked")
 public class AdDaoHibernateImpl implements AdDao {

@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import java.util.List;
 
@@ -21,7 +21,7 @@ import by.htp.ad_project.service.CategoryService;
 
 @Controller
 @RequestMapping(value = "/my_ads_action")
-public class UserAdsAction {
+public class UserAdsController {
 
 	@Autowired
 	private AdService adService;

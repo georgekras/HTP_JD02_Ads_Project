@@ -1,4 +1,4 @@
-package by.htp.ad_project.web.actions.impl;
+package by.htp.ad_project.web.controllers.impl;
 
 import java.util.Map;
 
@@ -21,7 +21,7 @@ import by.htp.ad_project.web.util.ValidateNullParamException;
 
 @Controller
 @RequestMapping(value = "/signup_action")
-public class SignupAction {
+public class SignupController {
 
 	private static final String MSG_NO_SINGUP_USER = "Can't sign up. Check your inputs.";
 	private static final String MSG_USER_DUPLICATE = "User with this login or email already exists.";
