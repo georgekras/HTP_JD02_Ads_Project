@@ -5,9 +5,10 @@ import java.util.List;
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.ui.ModelMap;
+import org.springframework.beans.support.PagedListHolder;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,6 +21,8 @@ import by.htp.ad_project.service.CategoryService;
 @RequestMapping(value = "/")
 public class MainController {
 
+	private static final int maxAdsOnPage = 9;
+	
 	@Autowired
 	private AdService adService;
 
@@ -35,11 +38,27 @@ public class MainController {
 	}
 	
 	@RequestMapping(value = "/main_action", method = RequestMethod.GET)
-	public ModelAndView mainAction(ModelMap model) {
+	public ModelAndView mainAction(@RequestParam(required = false) Integer page) {
+		ModelAndView modelAndView = new ModelAndView(PAGE_USER_MAIN);
+
 		List<Ad> ads = adService.getAllAds();
 		List<Category> categories = categoryService.getAllCategories();
-		model.addAttribute(REQUEST_PARAM_CATEGORIES_LIST, categories);
-		model.addAttribute(REQUEST_PARAM_ADS_LIST, ads);
-		return new ModelAndView(PAGE_USER_MAIN);
+        PagedListHolder<Ad> pagedListHolder = new PagedListHolder<>(ads);
+        pagedListHolder.setPageSize(maxAdsOnPage);
+        modelAndView.addObject(REQUEST_PARAM_CATEGORIES_LIST, categories);
+        modelAndView.addObject("maxPages", pagedListHolder.getPageCount());
+
+        if(page==null || page < 1 || page > pagedListHolder.getPageCount())page=1;
+
+        modelAndView.addObject("page", page);
+        if(page == null || page < 1 || page > pagedListHolder.getPageCount()){
+            pagedListHolder.setPage(0);
+            modelAndView.addObject(REQUEST_PARAM_ADS_LIST, pagedListHolder.getPageList());
+        }
+        else if(page <= pagedListHolder.getPageCount()) {
+            pagedListHolder.setPage(page-1);
+            modelAndView.addObject(REQUEST_PARAM_ADS_LIST, pagedListHolder.getPageList());
+        }
+		return modelAndView;
 	}
 }

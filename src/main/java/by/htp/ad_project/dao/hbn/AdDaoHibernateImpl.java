@@ -12,7 +12,7 @@ import by.htp.ad_project.domain.Ad;
 @Repository
 @SuppressWarnings("unchecked")
 public class AdDaoHibernateImpl implements AdDao {
-	
+
 	@Override
 	public void create(Ad entity) {
 
@@ -43,14 +43,11 @@ public class AdDaoHibernateImpl implements AdDao {
 
 		return ads;
 	}
-	
+
 	@Override
 	public List<Ad> readUserAds(int user_ID) {
 
 		Session session = SessionFactoryManager.getSessionFactory().openSession();
-//		Query query = session.createQuery(hql);
-//		query.setParameter("user_ID", user_ID);
-//		List<Ad> ads = query.list();
 		List<Ad> ads = session.createCriteria(Ad.class).add(Restrictions.eq("users_ID", user_ID)).list();
 		session.close();
 

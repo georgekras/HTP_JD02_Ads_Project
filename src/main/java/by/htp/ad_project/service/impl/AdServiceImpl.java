@@ -48,7 +48,4 @@ public class AdServiceImpl implements AdService {
 	public List<Ad> getUserAds(int user_ID) {
 		return adDao.readUserAds(user_ID);
 	}
-
-
-
 }
