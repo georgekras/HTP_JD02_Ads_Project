@@ -40,8 +40,8 @@ public class UserAdsController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String userAd(HttpServletRequest request, HttpSession session, Model model) {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
-		User user = (User) o;
+		Object obj = session.getAttribute("user");
+		User user = (User) obj;
 		if (user == null) {
 			return REDIRECT_TO + "/main_action";
 		} else {

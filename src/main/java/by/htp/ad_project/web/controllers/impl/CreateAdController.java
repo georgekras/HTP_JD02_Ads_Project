@@ -48,8 +48,8 @@ public class CreateAdController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String createAd(HttpServletRequest request, HttpSession session, Model model) {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
-		if (o == null) {
+		Object obj = session.getAttribute("user");
+		if (obj == null) {
 			return REDIRECT_TO + "/main_action";
 		} else {
 			List<Category> categories = categoryService.getAllCategories();
@@ -62,8 +62,8 @@ public class CreateAdController {
 	private String adCreate(@RequestParam Map<String, String> params, HttpSession session, HttpServletRequest request,
 			Model model) throws ParseException {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
-		User user = (User) o;
+		Object obj = session.getAttribute("user");
+		User user = (User) obj;
 		String title = params.get(REQUEST_PARAM_AD_TITLE);
 		String smalldesc = params.get(REQUEST_PARAM_AD_SMALLDESC);
 		String description = params.get(REQUEST_PARAM_AD_DESCRIPTION);

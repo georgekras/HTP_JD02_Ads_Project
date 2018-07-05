@@ -5,6 +5,7 @@ import java.util.Map;
 import static by.htp.ad_project.web.util.WebConstantDeclaration.*;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 
 import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,9 +46,9 @@ public class SignupController {
 		String email = params.get(REQUEST_PARAM_USER_EMAIL);
 		String nickname = params.get(REQUEST_PARAM_USER_NICKNAME);
 		String phonenumber = params.get(REQUEST_PARAM_USER_PHONENUMBER);
-
 		try {
 			HttpRequestParamValidator.validateRequestParamStringNotNull(login, password, email, nickname, phonenumber);
+			@Valid
 			User user = new User(0, login, email, password, nickname, phonenumber, 2);
 			userService.create(user);
 			session.setAttribute(REQUEST_PARAM_USER, user);

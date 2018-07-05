@@ -30,8 +30,8 @@ public class ProfileController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewProfile(HttpServletRequest request, HttpSession session) {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
-		if (o == null) {
+		Object obj = session.getAttribute("user");
+		if (obj == null) {
 			return REDIRECT_TO + "/main_action";
 		} else
 			return PAGE_USER_PROFILE;
@@ -40,8 +40,8 @@ public class ProfileController {
 	@RequestMapping(method = RequestMethod.POST)
 	public String profile(HttpServletRequest request, HttpSession session) {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
-		User user = (User) o;
+		Object obj = session.getAttribute("user");
+		User user = (User) obj;
 		String password = FormUtil.getString(request, REQUEST_PARAM_USER_PASSWORD);
 		String phoneNumber = FormUtil.getString(request, REQUEST_PARAM_USER_PHONENUMBER);
 		user.setPassword(password);

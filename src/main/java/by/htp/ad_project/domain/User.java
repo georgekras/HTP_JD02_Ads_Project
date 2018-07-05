@@ -4,6 +4,8 @@ import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @javax.persistence.Entity
 @Table(name = "users")
@@ -11,114 +13,113 @@ public class User extends Entity {
 
 	private static final long serialVersionUID = -1919018243680435461L;
 
-	@Id @GeneratedValue
+	@Id
+	@GeneratedValue
 	@Column(name = "ID")
-    private int ID;
-	
+	private int ID;
+
 	@Column(name = "Login")
-    private String Login;
-	
+	@Size(min = 5, max = 15)
+	private String Login;
+
 	@Column(name = "Email")
-    private String Email;
-	
+	@Pattern(regexp = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$")
+	private String Email;
+
 	@Column(name = "Password")
-    private String Password;
-	
+	@Size(min = 5, max = 15)
+	private String Password;
+
 	@Column(name = "Nickname")
-    private String Nickname;
+	private String Nickname;
 	
 	@Column(name = "PhoneNumber")
-    private String PhoneNumber;
-	
+	@Pattern(regexp = "^\\+(?:[0-9] ?){6,14}[0-9]$")
+	private String PhoneNumber;
+
 	@Column(name = "roles_ID")
-    private int roles_ID;
+	private int roles_ID;
 
-    public User(int ID, String Login, String Email, String Password, String Nickname, String PhoneNumber, int roles_ID) {
-        this.ID = ID;
-        this.Login = Login;
-        this.Email = Email;
-        this.Password = Password;
-        this.Nickname = Nickname;
-        this.PhoneNumber = PhoneNumber;
-        this.roles_ID = roles_ID;
-    }
+	public User(int ID, String Login, String Email, String Password, String Nickname, String PhoneNumber,
+			int roles_ID) {
+		this.ID = ID;
+		this.Login = Login;
+		this.Email = Email;
+		this.Password = Password;
+		this.Nickname = Nickname;
+		this.PhoneNumber = PhoneNumber;
+		this.roles_ID = roles_ID;
+	}
 
-    public User() {
-    }
-    
+	public User() {
+	}
 
-    public User(int id) {
+	public User(int id) {
 		super(id);
 	}
 
 	public int getID() {
-        return ID;
-    }
+		return ID;
+	}
 
-    public void setID(int ID) {
-        this.ID = ID;
-    }
+	public void setID(int ID) {
+		this.ID = ID;
+	}
 
-    public String getLogin() {
-        return Login;
-    }
+	public String getLogin() {
+		return Login;
+	}
 
-    public void setLogin(String Login) {
-        this.Login = Login;
-    }
+	public void setLogin(String Login) {
+		this.Login = Login;
+	}
 
-    public String getEmail() {
-        return Email;
-    }
+	public String getEmail() {
+		return Email;
+	}
 
-    public void setEmail(String Email) {
-        this.Email = Email;
-    }
+	public void setEmail(String Email) {
+		this.Email = Email;
+	}
 
-    public String getPassword() {
-        return Password;
-    }
+	public String getPassword() {
+		return Password;
+	}
 
-    public void setPassword(String Password) {
-        this.Password = Password;
-    }
+	public void setPassword(String Password) {
+		this.Password = Password;
+	}
 
-    public String getNickname() {
-        return Nickname;
-    }
+	public String getNickname() {
+		return Nickname;
+	}
 
-    public void setNickname(String Nickname) {
-        this.Nickname = Nickname;
-    }
+	public void setNickname(String Nickname) {
+		this.Nickname = Nickname;
+	}
 
-    public String getPhoneNumber() {
-        return PhoneNumber;
-    }
+	public String getPhoneNumber() {
+		return PhoneNumber;
+	}
 
-    public void setPhoneNumber(String PhoneNumber) {
-        this.PhoneNumber = PhoneNumber;
-    }
+	public void setPhoneNumber(String PhoneNumber) {
+		this.PhoneNumber = PhoneNumber;
+	}
 
-    public int getRoles_ID() {
-        return roles_ID;
-    }
+	public int getRoles_ID() {
+		return roles_ID;
+	}
 
-    public void setRoles_ID(int roles_ID) {
-        this.roles_ID = roles_ID;
-    }
+	public void setRoles_ID(int roles_ID) {
+		this.roles_ID = roles_ID;
+	}
 
-    @Override
-    public String toString() {
-        return "User{" +
-                "ID=" + ID +
-                ", Login='" + Login + '\'' +
-                ", Email='" + Email + '\'' +
-                ", Password='" + Password + '\'' +
-                ", Nickname='" + Nickname + '\'' +
-                ", PhoneNumber='" + PhoneNumber + '\'' +
-                ", roles_ID=" + roles_ID +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "User{" + "ID=" + ID + ", Login='" + Login + '\'' + ", Email='" + Email + '\'' + ", Password='"
+				+ Password + '\'' + ", Nickname='" + Nickname + '\'' + ", PhoneNumber='" + PhoneNumber + '\''
+				+ ", roles_ID=" + roles_ID + '}';
+	}
 
 	@Override
 	public int hashCode() {
@@ -174,7 +175,5 @@ public class User extends Entity {
 			return false;
 		return true;
 	}
-    
-    
 
 }

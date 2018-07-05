@@ -49,8 +49,8 @@ public class EditUserAdController {
 	@RequestMapping(method = RequestMethod.GET)
 	public String userAd(@PathVariable int id, HttpServletRequest request, HttpSession session, Model model) {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
-		if (o == null) {
+		Object obj = session.getAttribute("user");
+		if (obj == null) {
 			return REDIRECT_TO + "/main_action";
 		} else {
 			Ad ad = adService.read(id);
@@ -65,9 +65,9 @@ public class EditUserAdController {
 	private String editUserAd(@PathVariable int id, @RequestParam Map<String, String> params, HttpSession session,
 			HttpServletRequest request, Model model) throws ParseException {
 		session = request.getSession();
-		Object o = session.getAttribute("user");
+		Object obj = session.getAttribute("user");
 		User user;
-		user = (User) o;
+		user = (User) obj;
 		String title = params.get(REQUEST_PARAM_AD_TITLE);
 		String smalldesc = params.get(REQUEST_PARAM_AD_SMALLDESC);
 		String description = params.get(REQUEST_PARAM_AD_DESCRIPTION);
