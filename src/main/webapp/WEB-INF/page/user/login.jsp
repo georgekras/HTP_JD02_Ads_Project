@@ -14,7 +14,7 @@
 				<div class="form-group">
 					<label class="col-md-4 control-label" for="Login">Login</label>
 					<div class="col-md-4">
-						<input id="Login" name="user_login" type="text"
+						<input id="Login" name="user_login" type="text" pattern="[A-Za-z0-9]{5-15}"
 							placeholder="put your login here" class="form-control input-md"
 							required=""> <span class="help-block">Login (hint)</span>
 					</div>
@@ -25,7 +25,7 @@
 					<label class="col-md-4 control-label" for="Password">Password</label>
 					<div class="col-md-4">
 						<input id="Password" name="user_password" type="password"
-							placeholder="put your password here"
+							placeholder="put your password here" pattern="[A-Za-z0-9]{5-15}"
 							class="form-control input-md" required=""> <span
 							class="help-block">(min 5 symbols)</span>
 					</div>

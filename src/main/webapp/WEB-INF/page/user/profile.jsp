@@ -5,13 +5,13 @@
 	<div class="container">
 		<br> <b>
 			<div class="row" align="center">
-				<div class="col-md-4">Phone Number</div>
-				<div class="col-md-4">Password</div>
+				<div class="col-md-6">Phone Number</div>
+				<div class="col-md-6">Password</div>
 			</div>
 		</b> <br>
 		<div class="row" align="center">
-			<div class="col-md-4">${user.phoneNumber}</div>
-			<div class="col-md-4">${user.password}</div>
+			<div class="col-md-6">${user.phoneNumber}</div>
+			<div class="col-md-6">${user.password}</div>
 		</div>
 		<br>
 		<form class="form-horizontal" action="profile_action" method="post">

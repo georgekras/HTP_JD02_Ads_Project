@@ -9,7 +9,7 @@ import by.htp.ad_project.dao.UserDao;
 import by.htp.ad_project.domain.User;
 import by.htp.ad_project.service.UserService;
 
-@Service
+@Service("myDetailsService")
 public class UserServiceImpl implements UserService {
 
 	@Autowired
